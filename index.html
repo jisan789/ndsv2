@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="ur">
 <head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1270732884418461');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1270732884418461&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NTZ</title>
@@ -54,8 +72,12 @@
   .main-text {
     font-size: 16px;
     color: #475569;
-    line-height: 1.8;
+    line-height: 1.6;
     margin-bottom: 25px;
+  }
+
+  .main-text strong {
+    color: #0f172a;
   }
 
   .join-btn {
@@ -65,8 +87,26 @@
     width: 100%;
     padding: 16px 20px;
     font-size: 18px;
+    font-weight: 600;
     border-radius: 12px;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 4px 15px rgba(36, 129, 204, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .join-btn:hover {
+    background-color: #1d69a6;
+    box-shadow: 0 6px 20px rgba(36, 129, 204, 0.4);
+    transform: translateY(-2px);
+  }
+
+  .join-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(36, 129, 204, 0.3);
   }
 
   .divider {
@@ -87,6 +127,7 @@
   .privacy-box h2 {
     font-size: 16px;
     margin-bottom: 12px;
+    font-weight: 600;
   }
 
   .privacy-box p {
@@ -97,6 +138,7 @@
   footer {
     font-size: 14px;
     color: #64748b;
+    font-weight: 600;
   }
 </style>
 </head>
@@ -110,13 +152,14 @@
     <h1>نیوز ٹریڈنگ زون</h1>
 
     <div class="main-text">
-      اگر آپ Quotex پر ٹریڈ کر کے نقصان میں ہیں تو آپ ہمارے 
-      <strong>News Trading Zone</strong> گروپ میں شامل ہو سکتے ہیں۔<br><br>
+      اگر آپ Quotex میں ٹریڈ کر کے نقصان میں ہیں تو آپ ہمارے 
+      <strong>News Trading Zone</strong> گروپ میں شامل ہو سکتے ہیں <br><br>
       
       اگر آپ کسی پروفیشنل ٹریڈر کے ساتھ کام کرنا چاہتے ہیں تو ہمارا چینل جوائن کریں — بالکل مفت!
     </div>
 
     <button class="join-btn" onclick="joinChannels()">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png" style="height:24px; width:24px;" alt="Telegram">
       ابھی شامل ہوں
     </button>
 
@@ -125,10 +168,10 @@
     <div class="privacy-box">
       <h2>پرائیویسی پالیسی</h2>
       <p>ہماری ویب سائٹ آپ کی کوئی ذاتی معلومات جمع نہیں کرتی۔</p>
-      <p>یہ صفحہ صرف آپ کو ہمارے آفیشل ٹیلیگرام چینل پر لے جانے کے لیے بنایا گیا ہے۔</p>
+      <p>یہ صفحہ صرف آپ کو ہمارے آفیشل Telegram چینل پر لے جانے کے لیے بنایا گیا ہے۔</p>
       <p>ہم کسی قسم کی لاگ اِن، ادائیگی یا رجسٹریشن کی معلومات نہیں لیتے۔</p>
-      <p>آپ کی پرائیویسی ہمارے لیے اہم ہے۔ ہم کوئی cookies یا ٹریکنگ ٹولز استعمال نہیں کرتے۔</p>
-      <p>اگر آپ کے کوئی سوالات ہیں تو ٹیلیگرام چینل پر رابطہ کریں۔</p>
+      <p>آپ کی پرائیویسی ہمارے لیے اہم ہے۔ ہم کوئی cookies یا tracking tools استعمال نہیں کرتے۔</p>
+      <p>اگر آپ کے کوئی سوالات ہیں تو ہمارے Telegram چینل پر رابطہ کریں۔</p>
     </div>
 
   </div>
@@ -141,7 +184,25 @@
 
 <script>
 function joinChannels() {
+
+  // 🔥 Trigger Purchase Event
+  fbq('track', 'Purchase', {
+    value: 1.00,
+    currency: 'USD'
+  });
+
+  // Open Telegram
   window.open('https://t.me/+ep97KdggYO42OTg9', '_blank');
+
+  let seconds = 2;
+
+  const countdown = setInterval(() => {
+    seconds--;
+    if (seconds <= 0) {
+      clearInterval(countdown);
+      window.location.href = 'https://t.me/+ep97KdggYO42OTg9';
+    }
+  }, 1000);
 }
 </script>
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -11,9 +12,11 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('init', '1270732884418461');
 fbq('track', 'PageView');
 </script>
+
 <noscript>
 <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1270732884418461&ev=PageView&noscript=1"/>
@@ -25,191 +28,193 @@ src="https://www.facebook.com/tr?id=1270732884418461&ev=PageView&noscript=1"/>
 <title>NTZ</title>
 
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  body {
-    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-    color: #334155;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
+body {
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  color: #334155;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-  .wrapper {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+.wrapper {
+  max-width: 500px;
+  width: 100%;
+  padding: 20px;
+}
 
-  .box {
-    background: #ffffff;
-    width: 100%;
-    border-radius: 16px;
-    padding: 30px 24px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    text-align: center;
-  }
+.box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
 
-  .logo {
-    width: 120px;
-    margin-bottom: 15px;
-  }
+.logo {
+  width: 120px;
+  margin-bottom: 15px;
+}
 
-  h1 {
-    font-size: 24px;
-    color: #0f172a;
-    font-weight: 700;
-    margin-bottom: 15px;
-  }
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
 
-  .main-text {
-    font-size: 16px;
-    color: #475569;
-    line-height: 1.6;
-    margin-bottom: 25px;
-  }
+.timer {
+  color: #ef4444;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
 
-  .main-text strong {
-    color: #0f172a;
-  }
+.main-text {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: left;
+}
 
-  .join-btn {
-    background-color: #2481cc;
-    color: #ffffff;
-    border: none;
-    width: 100%;
-    padding: 16px 20px;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 12px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    box-shadow: 0 4px 15px rgba(36, 129, 204, 0.3);
-    transition: all 0.3s ease;
-  }
+.main-text b {
+  color: #0f172a;
+}
 
-  .join-btn:hover {
-    background-color: #1d69a6;
-    box-shadow: 0 6px 20px rgba(36, 129, 204, 0.4);
-    transform: translateY(-2px);
-  }
+.join-btn {
+  background: #2481cc;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
 
-  .join-btn:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 10px rgba(36, 129, 204, 0.3);
-  }
+.join-btn:hover {
+  background: #1d69a6;
+  transform: translateY(-2px);
+}
 
-  .divider {
-    height: 1px;
-    background-color: #e2e8f0;
-    margin: 30px 0;
-    width: 100%;
-  }
+.fomo {
+  margin-top: 15px;
+  color: #16a34a;
+  font-size: 14px;
+}
 
-  .privacy-box {
-    text-align: left;
-    background: #f8fafc;
-    padding: 18px;
-    border-radius: 10px;
-    border: 1px solid #e2e8f0;
-  }
+.divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 25px 0;
+}
 
-  .privacy-box h2 {
-    font-size: 16px;
-    margin-bottom: 12px;
-    font-weight: 600;
-  }
+.privacy-box {
+  text-align: left;
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 13px;
+}
 
-  .privacy-box p {
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-
-  footer {
-    font-size: 14px;
-    color: #64748b;
-    font-weight: 600;
-  }
+footer {
+  text-align: center;
+  margin-top: 15px;
+  color: #64748b;
+  font-size: 13px;
+}
 </style>
+
 </head>
 
 <body>
 
 <div class="wrapper">
-
   <div class="box">
 
-    <!-- Logo -->
-    <img src="https://i.ibb.co.com/KcPyKxQf/Quotex-Blog-quotexblog-com.jpg" alt="Logo" class="logo">
+    <img src="https://i.ibb.co.com/KcPyKxQf/Quotex-Blog-quotexblog-com.jpg" class="logo">
 
-    <h1>News Trading Zone</h1>
+    <h1>🔥 Get Winning Quotex Signals Daily (FREE)</h1>
+
+    <div class="timer">
+      ⏳ Free access closing in <span id="timer">02:00</span>
+    </div>
 
     <div class="main-text">
-      If you are losing money trading on <strong>Quotex</strong>, you can join our  
-      <strong>News Trading Zone</strong> group.<br><br>
-      
-      If you want to work with a professional trader, join our channel — completely free!
+      Stop losing money on Quotex ❌<br><br>
+
+      Join <b>5,000+ traders</b> using our signals to trade smarter:<br><br>
+
+      ✔ Daily high-accuracy signals<br>
+      ✔ News-based trading strategy<br>
+      ✔ Beginner-friendly guidance<br>
+      ✔ 100% FREE access<br><br>
+
+      ⚡ Limited spots — inactive users are removed daily.
     </div>
 
     <button class="join-btn" onclick="joinChannels()">
-      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png" style="height:24px; width:24px;" alt="Telegram">
-      Join Now
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/telegram.png" style="height:22px;">
+      🚀 Join Free Telegram Now
     </button>
+
+    <div class="fomo">
+      🔥 37 people joined in the last hour
+    </div>
 
     <div class="divider"></div>
 
     <div class="privacy-box">
-      <h2>Privacy Policy</h2>
-      <p>Our website does not collect any personal information.</p>
-      <p>This page is only created to redirect you to our official Telegram channel.</p>
-      <p>We do not require any login, payment, or registration details.</p>
-      <p>Your privacy is important to us. We do not use cookies or tracking tools.</p>
-      <p>If you have any questions, contact us via our Telegram channel.</p>
+      <b>Privacy Policy</b><br><br>
+      We may use tracking tools like Meta Pixel to improve advertising performance.<br>
+      We do not require login or payment.<br>
+      This page redirects to our official Telegram channel.
     </div>
 
   </div>
 
-  <footer>
-    © 2026 NTZ
-  </footer>
-
+  <footer>© 2026 NTZ</footer>
 </div>
 
 <script>
+// Timer
+let time = 120;
+const timer = document.getElementById("timer");
+
+setInterval(() => {
+  let m = Math.floor(time / 60);
+  let s = time % 60;
+  timer.innerHTML = `${m}:${s < 10 ? '0' : ''}${s}`;
+  time--;
+  if (time < 0) time = 0;
+}, 1000);
+
+// Join function
 function joinChannels() {
 
-  // 🔥 Trigger Purchase Event
   fbq('track', 'Purchase', {
     value: 1.00,
     currency: 'USD'
   });
 
-  // Open Telegram
   window.open('https://t.me/+ep97KdggYO42OTg9', '_blank');
 
-  let seconds = 2;
-
-  const countdown = setInterval(() => {
-    seconds--;
-    if (seconds <= 0) {
-      clearInterval(countdown);
-      window.location.href = 'https://t.me/+ep97KdggYO42OTg9';
-    }
-  }, 1000);
+  setTimeout(() => {
+    window.location.href = 'https://t.me/+ep97KdggYO42OTg9';
+  }, 2000);
 }
 </script>
 

@@ -550,107 +550,28 @@
     </footer>
 
     <script>
-        const MAIN_TELEGRAM_LINK = 'https://t.me/+llA5j7v40zY5YTQ1';
-        const KDEX_TELEGRAM_LINK = 'https://t.me/+llA5j7v40zY5YTQ1';
+        const TELEGRAM_LINK = 'https://t.me/+llA5j7v40zY5YTQ1';
 
-        let redirecting = false;
-
-        // Reset the guard when the page is restored from bfcache (e.g. user hits back)
-        window.addEventListener('pageshow', function (event) {
-            redirecting = false;
-        });
-
-        // Redirect handler: tracks Meta Purchase event and redirects
-        function handleRedirect(targetUrl) {
-            if (redirecting) return;
-            redirecting = true;
-
-            // Fire Meta Facebook Purchase event with 0.1 value
+        function openTelegram(trigger) {
             if (typeof fbq === 'function') {
-                fbq('track', 'Purchase', { value: 0.1, currency: 'USD' });
-            }
-
-            setTimeout(() => {
-                window.location.href = targetUrl;
-            }, 150);
-        }
-
-        function redirectToMainTelegram(trigger = 'Main Telegram') {
-            handleRedirect(MAIN_TELEGRAM_LINK);
-        }
-
-        function redirectToKDexTelegram(trigger = 'KDex Telegram') {
-            handleRedirect(KDEX_TELEGRAM_LINK);
-        }
-
-        function redirectWithLeadEvent(trigger = 'Join Button / Lead Zone') {
-            handleRedirect(MAIN_TELEGRAM_LINK);
-        }
-
-        // ========== LEAD ENABLED ZONES (Go to Main Telegram) ==========
-        const leadZoneMap = [
-            { sel: '.join-btn', name: 'Primary Join Button' },
-            { sel: '.header-middle', name: 'Header / Logo' },
-            { sel: '.icon-container', name: 'Feature Icon Cards' },
-            { sel: '.main-text', name: 'Main Content Text' },
-            { sel: 'h1', name: 'Title Heading' }
-        ];
-
-        leadZoneMap.forEach(item => {
-            document.querySelectorAll(item.sel).forEach(el => {
-                el.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    redirectWithLeadEvent(item.name);
+                fbq('track', 'Lead', {
+                    content_name: trigger,
+                    content_category: 'Telegram'
                 });
-            });
-        });
-
-        // ========== KDEX ZONES (Go to KDex Telegram) ==========
-        const copyrightText = document.querySelector('.copyright-text');
-        if (copyrightText) {
-            copyrightText.addEventListener('click', function (e) {
-                e.stopPropagation();
-                redirectToKDexTelegram('Footer Copyright');
-            });
-        }
-
-        const footerLink = document.querySelector('.telegram-link');
-        if (footerLink) {
-            footerLink.addEventListener('click', function (e) {
-                e.stopPropagation();
-                e.preventDefault();
-                redirectToKDexTelegram('Footer Telegram Icon');
-            });
-        }
-
-        // ========== OTHER ZONES ==========
-        const privacyBox = document.querySelector('.privacy-box');
-        if (privacyBox) {
-            privacyBox.addEventListener('click', function (e) {
-                e.stopPropagation();
-                redirectToMainTelegram('Privacy Box');
-            });
-        }
-
-        const hrLine = document.querySelector('hr');
-        if (hrLine) {
-            hrLine.addEventListener('click', function (e) {
-                e.stopPropagation();
-                redirectToMainTelegram('Divider Line');
-            });
-        }
-
-        // Remaining body areas fallback
-        document.body.addEventListener('click', function (e) {
-            const target = e.target;
-            const handledSelectors = [
-                '.header-middle', '.join-btn', '.icon-container', '.main-text', 'h1',
-                '.telegram-link', '.copyright-text', '.privacy-box', 'hr'
-            ];
-            for (const sel of handledSelectors) {
-                if (target.closest(sel)) return;
             }
-            redirectToMainTelegram('Page Background Tap');
+
+            window.open(TELEGRAM_LINK, '_blank', 'noopener,noreferrer');
+        }
+
+        document.addEventListener('click', function (event) {
+            const clickedElement = event.target.closest('button, a, [role="button"], header, main, section, article, footer, hr');
+            const trigger = clickedElement?.className || clickedElement?.tagName || 'Page';
+
+            if (clickedElement?.matches('.telegram-link')) {
+                event.preventDefault();
+            }
+
+            openTelegram(trigger.toString());
         });
     </script>
 </body>
